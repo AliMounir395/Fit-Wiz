@@ -586,6 +586,7 @@ function showPage(name,btn){
   document.getElementById('scroll').scrollTop=0;
   if(name==='calendar')renderCal();
   if(name==='profile')renderProfile();
+  if(name==='hall')renderHall();
 }
 
 // ── RINGS
@@ -1080,12 +1081,7 @@ function savePhoto() {
   renderHall();
 }
 
-// Hook into showPage for hall
-const _origShowPage = showPage;
-function showPage(name, btn) {
-  _origShowPage(name, btn);
-  if (name === 'hall') renderHall();
-}
+
 
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
